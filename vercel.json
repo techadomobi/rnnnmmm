@@ -1,0 +1,11 @@
+{
+  "buildCommand": "pnpm run build && pnpm --filter @workspace/rnm-clone run build",
+  "outputDirectory": "artifacts/rnm-clone/dist/public",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "devCommand": "pnpm --filter @workspace/rnm-clone run dev",
+  "env": {
+    "PORT": "3000",
+    "BASE_PATH": "/"
+  }
+}
