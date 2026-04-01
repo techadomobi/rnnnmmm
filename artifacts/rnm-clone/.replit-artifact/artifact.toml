@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "RNM India - Chartered Accountants"
+version = "1.0.0"
+id = "artifacts/rnm-clone"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20616
+
+[services.development]
+run = "pnpm --filter @workspace/rnm-clone run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rnm-clone", "run", "build" ]
+publicDir = "artifacts/rnm-clone/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20616"
+BASE_PATH = "/"
