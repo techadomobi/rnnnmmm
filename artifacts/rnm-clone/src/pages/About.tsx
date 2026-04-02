@@ -17,6 +17,38 @@ const leadership = [
   { name: "Partner – Tax", role: "Taxation", desc: "Leading India's complex direct and indirect tax landscape for clients." },
 ];
 
+const operatingModel = [
+  {
+    title: "Listen & Diagnose",
+    description:
+      "We begin every engagement by understanding business context, risk profile, and the specific outcome stakeholders want.",
+  },
+  {
+    title: "Design Clear Roadmaps",
+    description:
+      "Our teams create practical advisory roadmaps with timelines, responsibility matrices, and transparent effort estimates.",
+  },
+  {
+    title: "Execute With Discipline",
+    description:
+      "Cross-functional specialists collaborate to execute audits, tax plans, and advisory mandates with predictable quality.",
+  },
+  {
+    title: "Sustain Long-Term Value",
+    description:
+      "We monitor implementation, refine controls, and support leadership teams as regulations and market conditions evolve.",
+  },
+];
+
+const qualityPromises = [
+  "Partner-led delivery with clear escalation channels",
+  "Transparent communication and milestone reporting",
+  "Structured quality reviews before every major deliverable",
+  "Confidential handling of sensitive financial information",
+  "Solutions tailored to sector and business maturity",
+  "Focused on actionable outcomes, not generic advice",
+];
+
 export default function About() {
   return (
     <div>
@@ -123,6 +155,61 @@ export default function About() {
                     <div className="text-[#8B1A1A] font-bold text-lg font-serif mb-1">{m.year}</div>
                     <p className="text-gray-600 text-sm">{m.event}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-[#8B1A1A] text-sm font-semibold uppercase tracking-widest mb-3">Leadership</p>
+            <h2 className="font-serif text-3xl font-bold text-gray-900">Driven by Experienced Professionals</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {leadership.map((member, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-100 p-6 bg-gray-50 hover:border-[#8B1A1A]/30 transition-colors"
+                data-testid={`leadership-member-${i}`}
+              >
+                <h3 className="font-semibold text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-[#8B1A1A] text-sm font-medium mb-3">{member.role}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{member.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Operating model */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-[#8B1A1A] text-sm font-semibold uppercase tracking-widest mb-3">How We Work</p>
+            <h2 className="font-serif text-3xl font-bold text-gray-900">Our Engagement Approach</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            {operatingModel.map((step, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-6" data-testid={`operating-model-${i}`}>
+                <div className="w-8 h-8 rounded-full bg-[#8B1A1A] text-white text-sm font-semibold flex items-center justify-center mb-3">
+                  {i + 1}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white border border-gray-100 rounded-xl p-6 md:p-8">
+            <h3 className="font-serif text-2xl font-bold text-gray-900 mb-4">What Clients Can Expect</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {qualityPromises.map((item, i) => (
+                <div key={i} className="flex items-start gap-2 text-sm text-gray-600" data-testid={`quality-promise-${i}`}>
+                  <CheckCircle size={14} className="text-[#8B1A1A] mt-0.5 flex-shrink-0" />
+                  {item}
                 </div>
               ))}
             </div>

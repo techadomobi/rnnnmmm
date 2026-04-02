@@ -106,6 +106,57 @@ const serviceCategories = [
   },
 ];
 
+const engagementProcess = [
+  {
+    title: "Discovery & Scoping",
+    detail: "We assess your business stage, compliance posture, and decision priorities before proposing the scope.",
+  },
+  {
+    title: "Service Blueprint",
+    detail: "A partner-led team prepares timelines, dependencies, deliverables, and governance checkpoints.",
+  },
+  {
+    title: "Execution",
+    detail: "Domain experts execute with periodic reviews, status updates, and proactive issue management.",
+  },
+  {
+    title: "Closure & Improvement",
+    detail: "We provide implementation guidance and recommendations for sustained control and growth.",
+  },
+];
+
+const serviceDifferentiators = [
+  "Partner-level involvement in critical milestones",
+  "Integrated advisory across tax, finance, legal, and compliance",
+  "Sector-informed recommendations grounded in practical realities",
+  "Detailed documentation and audit-ready working papers",
+  "Predictable turnaround through structured workflows",
+  "Transparent commercials with clear scope boundaries",
+];
+
+const serviceFaqs = [
+  {
+    question: "Can RNM support both one-time and ongoing mandates?",
+    answer:
+      "Yes. We handle one-time engagements such as due diligence and transaction support, as well as long-term retainers for audit, tax, compliance, and CFO advisory.",
+  },
+  {
+    question: "Do you provide cross-border advisory support?",
+    answer:
+      "Absolutely. Through our global network and in-house teams, we support FEMA, international tax, inbound/outbound structuring, and multi-jurisdiction coordination.",
+  },
+  {
+    question: "How quickly can a project be started?",
+    answer:
+      "After the initial consultation and scope alignment, most mandates can be mobilized quickly with a dedicated team and kickoff plan.",
+  },
+  {
+    question: "Which industries do you typically work with?",
+    answer:
+      "Our teams regularly support real estate, manufacturing, healthcare, IT, banking, insurance, hospitality, and emerging startups.",
+  },
+];
+
 export default function Services() {
   return (
     <div>
@@ -170,6 +221,62 @@ export default function Services() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Delivery model */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-[#8B1A1A] text-sm font-semibold uppercase tracking-widest mb-3">Delivery Model</p>
+            <h2 className="font-serif text-3xl font-bold text-gray-900">How We Deliver Value</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {engagementProcess.map((step, i) => (
+              <div
+                key={i}
+                className="rounded-xl border border-gray-100 bg-gray-50 p-6 hover:border-[#8B1A1A]/30 transition-colors"
+                data-testid={`engagement-step-${i}`}
+              >
+                <div className="w-8 h-8 rounded-full bg-[#8B1A1A] text-white text-sm font-semibold flex items-center justify-center mb-3">
+                  {i + 1}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-gray-50 rounded-xl border border-gray-100 p-6 md:p-8">
+            <h3 className="font-serif text-2xl font-bold text-gray-900 mb-4">Why Businesses Choose RNM</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {serviceDifferentiators.map((point, i) => (
+                <div key={i} className="flex items-start gap-2 text-sm text-gray-600" data-testid={`service-differentiator-${i}`}>
+                  <CheckCircle size={14} className="text-[#8B1A1A] mt-0.5 flex-shrink-0" />
+                  {point}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-[#8B1A1A] text-sm font-semibold uppercase tracking-widest mb-3">FAQs</p>
+            <h2 className="font-serif text-3xl font-bold text-gray-900">Common Service Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {serviceFaqs.map((faq, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-6" data-testid={`services-faq-${i}`}>
+                <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
