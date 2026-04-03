@@ -7,5 +7,14 @@
   "env": {
     "PORT": "3000",
     "BASE_PATH": "/"
-  }
+  },
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
 }
