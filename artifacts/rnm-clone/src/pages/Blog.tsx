@@ -1,14 +1,19 @@
 import { Link } from "wouter";
-import { Calendar, User, ArrowRight, Tag, Clock, ChevronRight, Mail, Send, Bookmark, Share2 } from "lucide-react";
+import { Calendar, User, ArrowRight, Tag, Clock, ChevronRight, Mail, Send, Share2, Bookmark, Search, Filter, BookOpen, TrendingUp, MessageCircle } from "lucide-react";
 
 const featuredPost = {
   title: "Top CA Firms in India: What Makes Them Stand Apart",
-  category: "Industry",
+  category: "Industry Insights",
   date: "March 15, 2024",
   author: "RNM Research Team",
-  excerpt: "India's leading chartered accountancy firms are more than just compliance specialists — they serve as strategic advisors for enterprises navigating complex financial landscapes. Discover what sets the top firms apart and how they drive business success.",
+  excerpt: "India's leading chartered accountancy firms are more than just compliance specialists — they serve as strategic advisors for enterprises navigating complex financial landscapes. Discover what sets the top firms apart and how they drive business success through expertise, technology, and client-centric approaches.",
   slug: "top-ca-firms-in-india",
   readTime: "8 min read",
+  content: `The Indian chartered accountancy landscape has evolved significantly over the past few decades. Today's top CA firms are not just audit and compliance service providers — they are strategic business partners that help organizations navigate complex financial terrain.
+
+What distinguishes the leading firms is their ability to combine deep technical expertise with industry knowledge, leveraging technology to deliver insights that drive business decisions. From statutory audits to cross-border M&A advisory, these firms offer comprehensive solutions tailored to each client's unique needs.
+
+Key differentiators include partner-level involvement, sector-specific expertise, transparent communication, and a commitment to staying ahead of regulatory changes. The best firms also invest heavily in continuous learning and technology adoption, ensuring their teams can handle the most complex challenges.`,
 };
 
 const posts = [
@@ -17,70 +22,138 @@ const posts = [
     category: "Taxation",
     date: "March 8, 2024",
     author: "RNM Tax Team",
-    excerpt: "GST input tax credit remains one of the most complex yet crucial aspects of India's indirect taxation framework. This guide breaks down the eligibility, conditions, and procedures.",
+    excerpt: "GST input tax credit remains one of the most complex yet crucial aspects of India's indirect taxation framework. This comprehensive guide breaks down the eligibility criteria, conditions for availing ITC, common pitfalls, and best practices for maximizing your tax credits while ensuring full compliance.",
     slug: "gst-input-tax-credit-guide",
+    readTime: "12 min read",
   },
   {
     title: "FEMA Compliance for Foreign Investments in India",
     category: "Regulatory",
     date: "February 28, 2024",
     author: "RNM Advisory Team",
-    excerpt: "Foreign exchange management remains a critical compliance area for businesses with international operations. Understanding FEMA regulations is essential for smooth cross-border transactions.",
+    excerpt: "Foreign exchange management remains a critical compliance area for businesses with international operations. Understanding FEMA regulations is essential for smooth cross-border transactions, whether you're bringing foreign investment into India or making outbound investments.",
     slug: "fema-compliance-foreign-investments",
+    readTime: "10 min read",
   },
   {
     title: "Virtual CFO Services: The Future of Financial Management",
     category: "Consultancy",
     date: "February 20, 2024",
     author: "RNM Consulting Team",
-    excerpt: "Small and mid-sized enterprises increasingly recognize the value of Virtual CFO services — getting CFO-level financial expertise without the cost of a full-time executive.",
+    excerpt: "Small and mid-sized enterprises increasingly recognize the value of Virtual CFO services — getting CFO-level financial expertise without the cost of a full-time executive. Learn how vCFO services can transform your financial management and strategic planning.",
     slug: "virtual-cfo-services-future",
+    readTime: "7 min read",
   },
   {
     title: "Finding the Right Chartered Accountant Near You",
     category: "Advisory",
     date: "February 12, 2024",
     author: "RNM Editorial",
-    excerpt: "Choosing the right chartered accountant is a pivotal decision for your business. This guide outlines the key considerations and questions to ask when evaluating CA firms.",
+    excerpt: "Choosing the right chartered accountant is a pivotal decision for your business. This guide outlines the key considerations, questions to ask, and red flags to watch for when evaluating CA firms for your organization's needs.",
     slug: "finding-right-chartered-accountant",
+    readTime: "6 min read",
   },
   {
     title: "India Entry Strategy: A Guide for Foreign Companies",
     category: "Corporate Finance",
     date: "January 30, 2024",
     author: "RNM Corporate Finance",
-    excerpt: "With India emerging as one of the world's fastest-growing economies, foreign companies are increasingly looking at India entry. This guide covers the regulatory landscape and strategic options.",
+    excerpt: "With India emerging as one of the world's fastest-growing economies, foreign companies are increasingly looking at India entry. This comprehensive guide covers the regulatory landscape, entity structuring options, tax considerations, and strategic factors for successful market entry.",
     slug: "india-entry-strategy-guide",
+    readTime: "15 min read",
+  },
+  {
+    title: "Transfer Pricing Documentation: Best Practices for 2024",
+    category: "Taxation",
+    date: "January 15, 2024",
+    author: "RNM Transfer Pricing Team",
+    excerpt: "Transfer pricing regulations continue to evolve globally. Stay ahead with our guide to best practices for transfer pricing documentation, benchmarking studies, and compliance strategies for multinational enterprises operating in India.",
+    slug: "transfer-pricing-documentation-2024",
+    readTime: "11 min read",
+  },
+  {
+    title: "ESOP Accounting and Taxation: A Complete Overview",
+    category: "Consultancy",
+    date: "January 5, 2024",
+    author: "RNM ESOP Advisory",
+    excerpt: "Employee Stock Option Plans are powerful tools for attracting and retaining talent, but they come with complex accounting and tax implications. This guide covers everything from grant to exercise, including recent regulatory updates.",
+    slug: "esop-accounting-taxation-overview",
+    readTime: "9 min read",
+  },
+  {
+    title: "RBI Compliance for External Commercial Borrowings",
+    category: "Regulatory",
+    date: "December 20, 2023",
+    author: "RNM FEMA Team",
+    excerpt: "External Commercial Borrowings (ECBs) offer Indian companies access to foreign currency funding, but come with detailed RBI compliance requirements. Learn about eligibility, approval routes, end-use restrictions, and reporting obligations.",
+    slug: "rbi-ecb-compliance-guide",
+    readTime: "10 min read",
+  },
+  {
+    title: "Business Valuation Methods: Which One is Right for You?",
+    category: "Corporate Finance",
+    date: "December 10, 2023",
+    author: "RNM Valuation Team",
+    excerpt: "Business valuation is both an art and a science. Different methods yield different results, and the right approach depends on your purpose, industry, and company characteristics. This guide helps you understand the major valuation methodologies.",
+    slug: "business-valuation-methods-guide",
+    readTime: "8 min read",
   },
 ];
 
-const categories = ["All", "Taxation", "Regulatory", "Consultancy", "Corporate Finance", "Industry", "Advisory"];
+const categories = ["All", "Taxation", "Regulatory", "Consultancy", "Corporate Finance", "Industry Insights", "Advisory"];
 
 const popularTags = [
   "GST", "Income Tax", "FEMA", "M&A", "Due Diligence", "Transfer Pricing",
-  "Virtual CFO", "Company Law", "Audit", "Compliance", "Startups", "International Tax"
+  "Virtual CFO", "Company Law", "Audit", "Compliance", "Startups", "International Tax",
+  "ESOP", "Valuation", "RBI", "ECB", "IND-AS", "Corporate Restructuring"
 ];
 
 const newsletterBenefits = [
-  "Monthly insights on tax & regulatory changes",
-  "Expert analysis of business & financial trends",
-  "Practical tips for compliance & optimization",
-  "Exclusive access to research reports"
+  "Monthly insights on tax & regulatory changes affecting your business",
+  "Expert analysis of business & financial trends in India and globally",
+  "Practical tips for compliance optimization and tax efficiency",
+  "Exclusive access to research reports and industry whitepapers",
+  "Early notifications about upcoming webinars and events",
+];
+
+const relatedArticles = [
+  {
+    title: "Understanding GST Input Tax Credit: A Comprehensive Guide",
+    category: "Taxation",
+    date: "March 8, 2024",
+    slug: "gst-input-tax-credit-guide"
+  },
+  {
+    title: "FEMA Compliance for Foreign Investments in India",
+    category: "Regulatory",
+    date: "February 28, 2024",
+    slug: "fema-compliance-foreign-investments"
+  },
+  {
+    title: "India Entry Strategy: A Guide for Foreign Companies",
+    category: "Corporate Finance",
+    date: "January 30, 2024",
+    slug: "india-entry-strategy-guide"
+  },
 ];
 
 export default function Blog() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 to-[#1a0808] text-white py-20">
+      <section className="bg-gradient-to-br from-gray-900 to-[#1a0808] text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-2xl">
-            <p className="text-[#c4793a] text-sm font-semibold uppercase tracking-widest mb-4">RNM Blog</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-5">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-xs font-medium tracking-wider uppercase mb-6">
+              <BookOpen size={12} className="text-[#c4793a]" />
               Insights & Perspectives
+            </div>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              RNM Knowledge<br />
+              <span className="text-[#c4793a]">Center</span>
             </h1>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Expert commentary on taxation, regulatory changes, corporate finance, and the Indian business landscape from our team of professionals.
+            <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
+              Expert commentary on taxation, regulatory changes, corporate finance, and the Indian business landscape from our team of 200+ professionals. Stay informed with in-depth analysis, practical guides, and industry insights.
             </p>
           </div>
         </div>
@@ -97,8 +170,11 @@ export default function Blog() {
             data-testid="featured-post"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="bg-gradient-to-br from-[#8B1A1A]/10 to-gray-100 h-64 lg:h-auto flex items-center justify-center">
-                <div className="text-[#8B1A1A]/20 font-serif text-7xl font-bold">RNM</div>
+              <div className="bg-gradient-to-br from-[#8B1A1A]/10 to-gray-100 h-64 lg:h-auto flex items-center justify-center p-8">
+                <div className="text-center">
+                  <div className="text-[#8B1A1A]/20 font-serif text-7xl font-bold mb-4">RNM</div>
+                  <div className="text-[#8B1A1A]/30 text-sm font-medium">Knowledge Center</div>
+                </div>
               </div>
               <div className="p-8 lg:p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
@@ -152,10 +228,24 @@ export default function Blog() {
       {/* Blog content */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Categories */}
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Browse by Category</h2>
-            <div className="flex flex-wrap justify-center gap-2">
+          {/* Search and Categories */}
+          <div className="mb-10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+              <h2 className="font-serif text-2xl font-bold text-gray-900">Latest Articles</h2>
+              <div className="relative max-w-md w-full">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#8B1A1A] focus:ring-1 focus:ring-[#8B1A1A] transition-colors"
+                  data-testid="blog-search"
+                />
+              </div>
+            </div>
+
+            {/* Categories */}
+            <div className="flex flex-wrap items-center gap-2">
+              <Filter size={16} className="text-gray-400 mr-2" />
               {categories.map((cat, i) => (
                 <button
                   key={i}
@@ -172,12 +262,12 @@ export default function Blog() {
             </div>
           </div>
 
-          {/* Posts */}
+          {/* Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <article
                 key={i}
-                className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group"
+                className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow group"
                 data-testid={`blog-post-${i}`}
               >
                 <div className="bg-gradient-to-br from-[#8B1A1A]/10 to-gray-100 h-40 flex items-center justify-center">
@@ -188,6 +278,10 @@ export default function Blog() {
                     <span className="flex items-center gap-1 text-[10px] text-[#8B1A1A] bg-[#8B1A1A]/10 px-2 py-0.5 rounded-full font-medium">
                       <Tag size={9} />
                       {post.category}
+                    </span>
+                    <span className="text-[10px] text-gray-400 flex items-center gap-1">
+                      <Clock size={9} />
+                      {post.readTime}
                     </span>
                   </div>
                   <h2 className="font-semibold text-gray-900 leading-snug mb-2 group-hover:text-[#8B1A1A] transition-colors">
@@ -231,7 +325,7 @@ export default function Blog() {
                 {page}
               </button>
             ))}
-            <span className="flex items-center px-3 text-gray-400">of 3</span>
+            <span className="flex items-center px-3 text-gray-400 text-sm">of 3 pages</span>
           </div>
         </div>
       </section>
@@ -241,7 +335,7 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
             <h2 className="font-serif text-xl font-bold text-gray-900 mb-2">Popular Topics</h2>
-            <p className="text-gray-500 text-sm">Explore our most covered subjects</p>
+            <p className="text-gray-500 text-sm">Explore our most covered subjects and find relevant insights</p>
           </div>
           <div className="flex flex-wrap justify-center gap-2">
             {popularTags.map((tag, i) => (
@@ -268,9 +362,9 @@ export default function Blog() {
             Stay Ahead with Expert Insights
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter and receive monthly updates on tax changes, regulatory updates, and business advisory insights delivered straight to your inbox.
+            Subscribe to our newsletter and receive monthly updates on tax changes, regulatory updates, and business advisory insights delivered straight to your inbox. Join thousands of professionals who trust RNM for expert guidance.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-3xl mx-auto">
             <div className="text-left">
               <h3 className="font-semibold text-white mb-4">What You'll Receive:</h3>
               <ul className="space-y-3">
@@ -306,12 +400,12 @@ export default function Blog() {
                 </button>
               </form>
               <p className="text-xs text-gray-400 mt-4">
-                By subscribing, you agree to our Privacy Policy. Unsubscribe anytime.
+                By subscribing, you agree to our Privacy Policy. Unsubscribe anytime with one click.
               </p>
             </div>
           </div>
           <p className="text-sm text-gray-400">
-            Already a subscriber? You're receiving {typeof window !== 'undefined' && Math.floor(Math.random() * 5000 + 10000).toLocaleString()} other professionals who trust RNM for insights.
+            Already a subscriber? You're receiving updates alongside {typeof window !== 'undefined' && Math.floor(Math.random() * 5000 + 10000).toLocaleString()} other professionals who trust RNM for insights.
           </p>
         </div>
       </section>
@@ -322,8 +416,8 @@ export default function Blog() {
           <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">
             Looking for Specific Expertise?
           </h2>
-          <p className="text-white/80 mb-6">
-            Our team of professionals is ready to help with your unique requirements.
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            Our team of 200+ professionals is ready to help with your unique requirements. Get personalized advice from our experts.
           </p>
           <Link
             href="/contact"
