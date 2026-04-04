@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import Logo from "./Logo";
 
 const services = [
   { label: "Audit & Business Advisory", href: "/services/audit" },
@@ -57,15 +58,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group" data-testid="link-logo">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-[#8B1A1A] rounded flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-serif font-bold text-lg md:text-xl">R</span>
-              </div>
-              <div>
-                <div className="font-serif font-bold text-[#8B1A1A] text-lg md:text-xl leading-tight">RNM India</div>
-                <div className="text-[10px] text-gray-500 tracking-widest uppercase leading-tight hidden sm:block">Chartered Accountants</div>
-              </div>
-            </Link>
+            <Logo variant="navbar" href="/" />
 
             {/* Desktop nav links */}
             <div className="hidden lg:flex items-center gap-1">

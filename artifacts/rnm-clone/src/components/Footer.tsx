@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import Logo from "./Logo";
 
 const offices = [
   { city: "New Delhi", address: "4/80, Janpath, New Delhi - 110001", phone: "+91-11-4319 2000" },
@@ -34,14 +35,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-[#8B1A1A] rounded flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-serif font-bold text-xl">R</span>
-              </div>
-              <div>
-                <div className="font-serif font-bold text-white text-lg">RNM India</div>
-                <div className="text-[10px] text-gray-400 tracking-widest uppercase">Est. 1946</div>
-              </div>
+            <div className="mb-5">
+              <Logo variant="footer" href="/" className="!gap-2.5" />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
               R N Marwah & Co. LLP — one of India's premier Chartered Accountancy firms with over 77 years of trusted financial advisory services.
@@ -121,15 +116,15 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin size={14} className="text-[#c4793a] mt-0.5 flex-shrink-0" />
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  4/80, Janpath<br />
-                  New Delhi - 110001<br />
+                  K - 318, 3rd Floor, Nai Basti, Lado Sarai <br />
+                  New Delhi, Delhi 110030<br />
                   India
                 </p>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone size={14} className="text-[#c4793a] flex-shrink-0" />
-                <a href="tel:+911143192000" className="text-sm text-gray-400 hover:text-[#c4793a] transition-colors" data-testid="footer-phone">
-                  +91-11-4319 2000
+                <a href="tel:+916395622281" className="text-sm text-gray-400 hover:text-[#c4793a] transition-colors" data-testid="footer-phone">
+                  +91-6395622281
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
